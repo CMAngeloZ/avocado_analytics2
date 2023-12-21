@@ -17,9 +17,6 @@ data['LEVEL_JOB'] = le.fit_transform(data['LEVEL_JOB'])
 data['RESIGN'] = le.fit_transform(data['RESIGN'])
 data['DEPT'] = le.fit_transform(data['DEPT'])
 
-# Discretize 'RESIGN' into two classes
-data['RESIGN'] = pd.cut(data['RESIGN'], bins=[0, 10000, float('inf')], labels=[0, 1])
-
 # Split data
 X = data.drop('RESIGN', axis=1)
 y = data['RESIGN']
